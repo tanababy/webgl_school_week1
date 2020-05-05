@@ -1,0 +1,15 @@
+include ./_mixin.pug
+include ./_config.pug
+doctype html
+html(lang="ja")
+  head
+    include ./_include/_inc_meta.pug
+
+  body(class=KEY)
+    //- include ./_include/_inc_header.pug
+
+    main.wrapper(role="main")
+      block contents
+
+    //- include ./_include/_inc_footer.pug
+    include ./_include/_inc_js.pug

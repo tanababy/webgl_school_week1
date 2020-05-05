@@ -1,0 +1,17 @@
+/* ---------------------------------------------
+*   module
+--------------------------------------------- */
+.component {
+  font-weight: bold;
+
+  @include pc {
+    font-size: pxtorem(25, "pc");
+  }
+
+  @include sp {
+    font-size: pxtovw(20, "sp");
+  }
+
+  &__test {
+  }
+}

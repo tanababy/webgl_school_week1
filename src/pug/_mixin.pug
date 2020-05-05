@@ -1,0 +1,14 @@
+mixin picture(options)
+  - options = options || {};
+  picture(class=attributes.class)
+    if(options.s === null)
+      source(type="image/webp" srcset=`${DIR}img/${options.l}.webp`)
+      source(srcset=`${DIR}img/${options.l}.${options.type}`)
+    else
+      if(typeof options.s === "string")
+        source(type="image/webp" media="(max-width:767px)" srcset=`${DIR}img/${options.s}.webp`)
+        source(media="(max-width:767px)" srcset=`${DIR}img/${options.s}.${options.type}`)
+      if(typeof options.l === "string")
+        source(type="image/webp" media="(min-width:768px)" srcset=`${DIR}img/${options.l}.webp`)
+        source(media="(min-width:768px)" srcset=`${DIR}img/${options.l}.${options.type}`)
+    img(src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7" alt=(options.alt || '') class=options.class)

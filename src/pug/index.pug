@@ -1,0 +1,14 @@
+extends _layout.pug
+
+block append params
+  -
+    KEY = "top";//このKEYはbodyタグにクラス付与されます。条件判定に使用しているためtopのみ変更不可
+    URL = "index.html"//このページのドメイン以下のパスを入力
+    OG = "share.png";//og画像の画像名を拡張子まで入力
+    DIR = "./";//このページで使用するパスを記入。例えば第二階層なら「../」になる。
+    TITLE = "Project Template | TEST inc.";
+    DESCRIPTION = "This is the Project Templete!!!";
+    KEYWORDS = "test,develop,design";
+
+block contents
+  canvas#stage
